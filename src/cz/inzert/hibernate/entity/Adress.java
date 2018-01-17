@@ -18,6 +18,10 @@ public class Adress {
     @Column(name = "street")
     private String street;
 
+    public Adress(){
+
+    }
+
     public Adress(String zipCode, String city, String street) {
         this.zipCode = zipCode;
         this.city = city;
@@ -54,11 +58,6 @@ public class Adress {
 
     public void setStreet(String street) {
         this.street = street;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }
 

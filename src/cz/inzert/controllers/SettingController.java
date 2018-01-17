@@ -1,15 +1,15 @@
-package cz.inzert;
+package cz.inzert.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class RegistrationContoller {
-    @RequestMapping(value = "/registration")
+public class SettingController {
+    @RequestMapping(value = "/setting")
     public ModelAndView home(){
-        ModelAndView modelAndView = new ModelAndView( "registration");
-        modelAndView.addObject("message", "Hi, welcome in registration");
+        ModelAndView modelAndView = new ModelAndView( "setting");
+        modelAndView.addObject("message", "Hi, welcome in setting");
         return modelAndView;
     }
 }
