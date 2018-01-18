@@ -1,14 +1,12 @@
 package cz.inzert.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name= "user")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     @Column(name = "firstName")
@@ -17,32 +15,34 @@ public class User {
     private String lastName;
     @Column(name = "login")
     private String login;
+    @Column(name = "password")
+    private String password;
     @Column(name = "phoneNumber")
     private String phoneNumber;
     @Column(name = "email")
     private String email;
-    @Column(name = "adress")
-    private int adress;
     @Column(name = "rating")
     private int rating;
     @Column(name = "privileges")
     private int privileges;
 
-    public User(){
 
-    }
-    public User(String firstName, String lastName, String login, String phoneNumber,
-                String email, int adress, int rating, int privileges) {
+    public User(String firstName, String lastName, String login, String password,String email, String phoneNumber, int rating, int privileges) {
         //this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
+        this.password = password;
+
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.adress = adress;
         this.rating = rating;
         this.privileges = privileges;
     }
+
+    public User(){ }
+
+    public int getId() { return id; }
 
     public String getFirstName() {
         return firstName;
@@ -68,6 +68,11 @@ public class User {
         this.login = login;
     }
 
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -82,14 +87,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getAdress() {
-        return adress;
-    }
-
-    public void setAdress(int adress) {
-        this.adress = adress;
     }
 
     public int getRating() {

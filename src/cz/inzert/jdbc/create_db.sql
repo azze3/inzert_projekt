@@ -17,6 +17,7 @@ CREATE TABLE `user` (
   `firstName` varchar(45) NOT NULL,
   `lastName` varchar(45) NOT NULL,
   `login` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
   `phoneNumber` varchar(45),
   `email` varchar(45) NOT NULL,
   `rating` int(11) DEFAULT 0,
